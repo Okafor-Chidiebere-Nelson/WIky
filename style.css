@@ -137,10 +137,16 @@ body {
   overflow: hidden;
   height: 15em;
   width: 80%;
-  /* border: 1px solid silver; */
-  border: 1px solid transparent;
+  border: 1px solid silver;
+  /* border: 1px solid transparent; */
   border-radius: 1em;
   text-decoration: none;
+}
+
+.search-card:hover {
+  background-color: var(--black);
+  color: var(--white);
+  box-shadow: 1px 1px 10px var(--black);
 }
 
 .search-card-darkmode {
@@ -149,13 +155,7 @@ body {
 }
 
 .search-card-darkmode:hover {
-  box-shadow: 1px 1px 10px var(--white);
-}
-
-.search-card:hover {
-  background-color: var(--black);
-  color: var(--white);
-  box-shadow: 1px 1px 10px var(--black);
+  box-shadow: 1px 1px 12px var(--white);
 }
 
 .title {

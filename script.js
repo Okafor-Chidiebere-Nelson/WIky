@@ -50,13 +50,6 @@ function renderAPI(list) {
   resultsDiv.innerHTML = `<div class="article"> ${searchCard}</div>`;
 
   const searchCards = document.querySelectorAll(".search-card");
-  //   console.log(searchCards.length);
-
-  //   searchShadow = searchCards.forEach((item) => {
-  //     item.addEventListener("mouseover", (shadow) => {
-  //       shadow.style.boxShadow = "1px 1px 10px var(--white)";
-  //     });
-  //   });
 
   nelson = function searchCardDarkMode() {
     for (let i = 0; i < searchCards.length; i++) {
@@ -65,11 +58,8 @@ function renderAPI(list) {
       } else {
         searchCards[i].classList.remove("search-card-darkmode");
       }
-      console.log(searchCards[i]);
     }
   };
-
-  searchCardDarkMode();
 }
 
 darkmodeIconContainer.addEventListener("click", () => {
@@ -84,7 +74,6 @@ darkmodeIconContainer.addEventListener("click", () => {
   } else {
     wikipediaForm.classList.remove("wikipedia-form-darkmode-toggle");
   }
-  //   searchCardDarkMode();
+
   setTimeout(nelson, 0);
-  //   setTimeout(searchShadow, 5);
 });
