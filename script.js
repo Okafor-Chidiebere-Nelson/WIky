@@ -5,7 +5,6 @@ const wikipediaForm = document.querySelector(".wikipedia-form");
 const searchInput = document.querySelector(".searchInput");
 const submitBtn = document.querySelector(".submitBtn");
 const resultsDiv = document.querySelector(".resultsDiv");
-const searchCard = document.querySelectorAll(".search-card");
 
 const darkmodeIconContainer = document.querySelector(
   ".darkmode-icon-container"
@@ -43,7 +42,7 @@ async function searchAPI(searchValue) {
 }
 
 function renderAPI(list) {
-  const searcCard = list
+  const searchCard = list
     .map((item) => {
       const { title, snippet, pageid } = item;
       return `<a class="search-card" href=http://en.wikipedia.org/?curid=${pageid} target = "_blank">
@@ -52,15 +51,36 @@ function renderAPI(list) {
               </a>`;
     })
     .join("");
-  resultsDiv.innerHTML = `<div class="article"> ${searcCard}</div>`;
+  resultsDiv.innerHTML = `<div class="article"> ${searchCard}</div>`;
+
+  const searchCards = document.querySelectorAll(".search-card");
+  console.log(searchCards.length);
+
+  searchShadow = searchCards.forEach((item) => {
+    item.addEventListener("mouseover", (shadow) => {
+      shadow.style.boxShadow = "1px 1px 10px var(--white)";
+    });
+  });
+
+  nelson = function searchCardDarkMode() {
+    for (let i = 0; i < searchCards.length; i++) {
+      searchCards[i].classList.toggle("search-card-darkmode");
+      console.log(searchCards[i]);
+    }
+  };
 }
 
 darkmodeIconContainer.addEventListener("click", () => {
   document.body.classList.toggle("darkmode");
+  wikipediaForm.classList.toggle("wikipedia-form-darkmode-toggle");
 
-  searchCard.forEach((item) => {
-    item.classList.toggle("darkmode");
-  });
+  setTimeout(nelson, 50);
+  setTimeout(searchShadow, 50);
+  //   searchCard.forEach((item) => {
+  //     item.classList.toggle("darkmode");
+
+  //   });
+  //
 
   //   searchCard.classList.toggle("darkmode");
 

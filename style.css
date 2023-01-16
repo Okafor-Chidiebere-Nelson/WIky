@@ -67,6 +67,7 @@ body {
   justify-content: center;
   flex-flow: column;
   min-height: 100vh;
+  margin-block-end: 1em;
 }
 
 .wikipedia-icon-container {
@@ -92,6 +93,10 @@ body {
   border: 1px solid transparent;
   box-shadow: 1px 1px 10px var(--lg-black);
   margin-block-end: var(--margin-bl-end);
+}
+
+.wikipedia-form-darkmode-toggle {
+  box-shadow: 1px 1px 10px var(--white);
 }
 
 .wikipedia-search-input {
@@ -120,7 +125,7 @@ body {
   place-items: center;
 }
 
-.article a {
+.search-card {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -128,22 +133,22 @@ body {
   color: var(--black);
   text-align: center;
   transition: all 0.5s ease-in;
-}
-
-.article a:hover {
-  background-color: var(--black);
-  color: var(--white);
-}
-
-.search-card {
+  overflow: hidden;
   height: 15em;
   width: 80%;
   border: 1px solid silver;
   text-decoration: none;
 }
 
+.search-card-darkmode {
+  background-color: var(--black);
+  color: var(--white);
+}
+
 .search-card:hover {
-  box-shadow: 1px 1px 20px var(--black);
+  background-color: var(--black);
+  color: var(--white);
+  box-shadow: 1px 1px 10px var(--black);
 }
 
 .title {
