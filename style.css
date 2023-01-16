@@ -80,6 +80,7 @@ body {
 .wikipedia-title {
   font-size: 3em;
   font-weight: 5;
+  text-align: center;
 }
 
 .wikipedia-form {
