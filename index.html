@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wikipedia</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="darkmode-icon-container">
+      <i class="fa-solid fa-moon"></i>
+    </div>
+
+    <div class="lightmode-icon-container">
+      <i class="fa-solid fa-sun-bright"></i>
+    </div>
+
+    <div class="wikipedia-content-container">
+      <div class="wikipedia-icon-container">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/150px-Wikipedia-logo-v2.svg.png"
+          alt=""
+          class="wikipedia-icon"
+        />
+      </div>
+
+      <div class="wikipedia-title-container">
+        <h1 class="wikipedia-title">Search Wikipedia</h1>
+      </div>
+
+      <form class="wikipedia-form">
+        <input
+          type="text"
+          class="wikipedia-search-input searchInput"
+          name=""
+          id=""
+        />
+        <!-- <input type="submit" class="wikipedia-submit-input" value="" /> -->
+        <button class="wikipedia-submit-button submitBtn">search</button>
+      </form>
+
+      <div class="wikipedia-search-results resultsDiv"></div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
