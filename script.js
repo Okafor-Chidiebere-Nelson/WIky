@@ -10,10 +10,6 @@ const darkmodeIconContainer = document.querySelector(
   ".darkmode-icon-container"
 );
 
-// window.addEventListener("DOMContentLoaded", () => {
-//   resultsDiv.innerHTML = "";
-// });
-
 wikipediaForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const value = searchInput.value;
@@ -31,7 +27,7 @@ async function searchAPI(searchValue) {
     const response = await fetch(`${url}${searchValue}`);
     const data = await response.json();
     const result = data.query.search;
-    console.log(result);
+    // console.log(result);
     if (result.length < 1) {
       resultsDiv.innerHTML = `<div class="error" >No matching results found.</div>`;
     }
@@ -54,38 +50,41 @@ function renderAPI(list) {
   resultsDiv.innerHTML = `<div class="article"> ${searchCard}</div>`;
 
   const searchCards = document.querySelectorAll(".search-card");
-  console.log(searchCards.length);
+  //   console.log(searchCards.length);
 
-  searchShadow = searchCards.forEach((item) => {
-    item.addEventListener("mouseover", (shadow) => {
-      shadow.style.boxShadow = "1px 1px 10px var(--white)";
-    });
-  });
+  //   searchShadow = searchCards.forEach((item) => {
+  //     item.addEventListener("mouseover", (shadow) => {
+  //       shadow.style.boxShadow = "1px 1px 10px var(--white)";
+  //     });
+  //   });
 
   nelson = function searchCardDarkMode() {
     for (let i = 0; i < searchCards.length; i++) {
-      searchCards[i].classList.toggle("search-card-darkmode");
+      if (!searchCards[i].classList.contains("search-card-darkmode")) {
+        searchCards[i].classList.add("search-card-darkmode");
+      } else {
+        searchCards[i].classList.remove("search-card-darkmode");
+      }
       console.log(searchCards[i]);
     }
   };
+
+  searchCardDarkMode();
 }
 
 darkmodeIconContainer.addEventListener("click", () => {
-  document.body.classList.toggle("darkmode");
-  wikipediaForm.classList.toggle("wikipedia-form-darkmode-toggle");
+  if (!document.body.classList.contains("darkmode")) {
+    document.body.classList.add("darkmode");
+  } else {
+    document.body.classList.remove("darkmode");
+  }
 
-  setTimeout(nelson, 50);
-  setTimeout(searchShadow, 50);
-  //   searchCard.forEach((item) => {
-  //     item.classList.toggle("darkmode");
-
-  //   });
-  //
-
-  //   searchCard.classList.toggle("darkmode");
-
-  //   searchCard.addEventListener("mouseover", () => {
-  //     searchCard.style.backgroundColor = "white";
-  //     searchCard.style.color = "black";
-  //   });
+  if (!wikipediaForm.classList.contains("wikipedia-form-darkmode-toggle")) {
+    wikipediaForm.classList.add("wikipedia-form-darkmode-toggle");
+  } else {
+    wikipediaForm.classList.remove("wikipedia-form-darkmode-toggle");
+  }
+  //   searchCardDarkMode();
+  setTimeout(nelson, 0);
+  //   setTimeout(searchShadow, 5);
 });

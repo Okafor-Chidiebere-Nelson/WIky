@@ -47,8 +47,8 @@ body {
 }
 
 .loading {
-  height: 4em;
-  width: 4em;
+  height: 3em;
+  width: 3em;
   border: 6px solid silver;
   border-top-color: #2bc5ae;
   border-radius: 100%;
@@ -91,6 +91,7 @@ body {
   /* padding: 0; */
   padding: 2.3em;
   border: 1px solid transparent;
+  border-radius: 1em;
   box-shadow: 1px 1px 10px var(--lg-black);
   margin-block-end: var(--margin-bl-end);
 }
@@ -136,13 +137,19 @@ body {
   overflow: hidden;
   height: 15em;
   width: 80%;
-  border: 1px solid silver;
+  /* border: 1px solid silver; */
+  border: 1px solid transparent;
+  border-radius: 1em;
   text-decoration: none;
 }
 
 .search-card-darkmode {
   background-color: var(--black);
   color: var(--white);
+}
+
+.search-card-darkmode:hover {
+  box-shadow: 1px 1px 10px var(--white);
 }
 
 .search-card:hover {
