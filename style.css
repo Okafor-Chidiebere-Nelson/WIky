@@ -142,6 +142,10 @@ body {
   text-decoration: none;
 }
 
+.search-card:hover {
+  box-shadow: 1px 1px 20px var(--black);
+}
+
 .title {
   margin-bottom: 1em;
   font-size: 1.5em;
