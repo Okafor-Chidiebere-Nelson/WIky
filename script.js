@@ -27,7 +27,8 @@ async function searchAPI(searchValue) {
     const response = await fetch(`${url}${searchValue}`);
     const data = await response.json();
     const result = data.query.search;
-    // console.log(result);
+    console.log(data)
+    console.log(result);
     if (result.length < 1) {
       resultsDiv.innerHTML = `<div class="error" >No matching results found.</div>`;
     }

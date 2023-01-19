@@ -20,6 +20,10 @@ body {
   color: var(--black);
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 .darkmode-icon-container {
   position: absolute;
   top: 15%;
@@ -156,6 +160,8 @@ body {
 
 .search-card-darkmode:hover {
   box-shadow: 1px 1px 12px var(--white);
+  background-color: var(--white);
+  color: var(--black);
 }
 
 .title {
